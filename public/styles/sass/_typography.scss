@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+
+$open-sans: 'Open Sans', sans-serif;
+
+html {
+  color: $color-text-base;
+  font-size: $base-font-size + 0px;
+}
+
+body {
+  line-height: 1.8em;
+  @include set-font($open-sans, $base-font-size, 300);
+}
+
+::-moz-selection {
+  color: #111;
+  background: #D6EDFF;
+  text-shadow: none;
+}
+
+::selection {
+  color: #111;
+  background: #D6EDFF;
+  text-shadow: none;
+}
+
+%header {
+  margin-top: 0;
+  margin-bottom: base(1);
+  text-rendering: optimizeLegibility;
+  color:  $color-text-header;
+  line-height: 1.1em;
+  @include set-font($open-sans, 16, 300);
+  &::selection{
+    //Changing color on selection bugs out with SVG fonts.
+    //{color: inherit} fixes this.
+    //color: inherit;
+  }
+}
+
+$headers: (1, 2, 3, 4, 5, 6);
+
+/* Produces 36, 32, 28, 24, 20, 16 font sizes under 16px base font */
+@each $header in $headers {
+  h#{$header} {
+    @extend %header;
+    @include set-font-size($base-font-size + (4 * (6 - $header)));
+  }
+}
+
+/* If you want to set header sizes individually */
+
+/* h1 {
+  @include set-font-size(36);
+}
+
+h2 {
+  @include set-font-size(32);
+}
+
+h3 {
+  @include set-font-size(28);
+}
+
+h4 {
+  @include set-font-size(24);
+}
+
+h5 {
+  @include set-font-size(20);
+}
+
+h6 {
+  @include set-font-size(16);
+} */

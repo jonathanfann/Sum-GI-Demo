@@ -1,0 +1,109 @@
+//Jon's Mixins
+@mixin clearfix {
+  &:before, &:after{
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+@mixin hoverActiveFocus() {
+    &:hover, &:active, &:focus {
+        @content;
+    }
+}
+
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin navli {
+    display: inline;
+}
+
+@mixin stripe1 {width:100%; height:auto; background:$color-blue; color:#fff; padding-bottom:20px; padding-left:20px; padding-right:20px;}
+@mixin stripe15 {width:100%; height:auto; background:darken( $color-blue, 25% ); color:#dfdfdf; padding:20px;}
+@mixin stripe2 {width:100%; height:350px; color:#000;}
+@mixin stripe3 {width:100%; height:auto; background:$color-blue; color:#fff; padding-top:20px;}
+
+@function base($n, $round: false) {
+  $result: $n * $baseline;
+
+  @if $round == "up" {
+    $result: ceil($result)
+  } @else if $round == "down" {
+    $result: floor($result)
+  }
+
+  @return $result;
+}
+
+@function toPx($n) {
+  $result: 0px + $n;
+  @return $result;
+}
+
+@function toRem($n) {
+  $result: 0rem + $n / $base-font-size;
+  @return $result;
+}
+
+@mixin set-font($family, $size, $weight) {
+  font:{
+    family: $family;
+    weight: $weight;
+  }
+  @include set-font-size($size);
+}
+
+@mixin set-font-size($size) {
+  font-size: toPx($size);
+  font-size: toRem($size);
+}
+
+@mixin image-fix {
+  -webkit-backface-visibility: hidden; //fixes jittering on image animations
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation; 
+  -moz-animation:    $animation;
+  -o-animation:      $animation;
+  animation:         $animation;
+}

@@ -1,0 +1,106 @@
+/*----------------------------------------------------------------------------------------------------------------*\
+    BASIC RESET - please use a better one in production
+\*----------------------------------------------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.pageContainer {
+	max-width: 900px;
+	padding: 30px 10px;
+    margin: 0 auto;
+}
+
+.textContainer {
+    padding-top: 20px;
+    
+    text-align: center;
+}
+
+.textContainer a {
+	color: #333;
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    NAV
+\*----------------------------------------------------------------------------------------------------------------*/
+.boom1 {
+	background: #FFF; border-bottom:0px solid #668DC7;
+}
+
+.boom1 .boom1Control {
+	display: none;
+	
+	cursor: pointer;
+}
+
+.boom1 ul {
+	list-style: none;
+}
+
+.boom1 li {
+	display: block;
+	
+	position: relative;
+	
+	z-index: 1;
+}
+
+.boom1 a {
+	padding: 10px 20px;
+	display: block;
+	
+	color: #333;
+	text-decoration: none;
+	text-align: center;
+    
+    background:#fff;
+}
+
+.boom1 a:hover {
+	color: #668DC7;
+}
+
+.boom1 span {
+    display: none;
+}
+
+.boom1 .dropdown {
+    text-align: center;
+}
+
+.boom1 .dropdown li {
+	margin: 0;
+	display: inline-block;
+}
+
+.boom1 .dropdown a {
+    padding: 0;
+    border-right: 0;
+    margin-right: 10px;
+    
+    font-size: 0.8em;
+}
+
+.boom1 .dropdown li:last-child a {
+    margin-right: 0;
+}
+
+.boom1 .dropdown ul {
+    display: none;
+}
+
+
+
+
+

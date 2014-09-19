@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ "styles.css" | asset_url | stylesheet_tag }}
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+      </script>
+
+      {{ "ie.css" | asset_url | stylesheet_tag }}
+    <![endif]-->
+
+    <!-- Sticky Nav -->
+
+<link href="/includes/stickynav/font-awesome.min.css" type="text/css" rel="stylesheet"> <!-- Font Awesome -->
+<!-- all these references goes before the closing body tag-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- jquery -->
+<script type="text/javascript" src="/includes/jquery.sticky.js"></script>
+<script type="text/javascript" src="/includes/navigation.js"></script>
+<link href="/includes/navmaster.css" type="text/css" rel="stylesheet">
+<!-- Simplemodal -->
+<link type='text/css' href='/modal/css/demo.css' rel='stylesheet' media='screen' />
+
+<!-- Contact Form CSS files -->
+<link type='text/css' href='/modal/css/basic.css' rel='stylesheet' media='screen' />
+<!-- IE6 "fix" for the close png image -->
+<!--[if lt IE 7]>
+<link type='text/css' href='/modal/css/basic_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+  <script>
+    $(window).load(function(){
+      $("#header").sticky({ topSpacing: 0 });
+    });
+  </script>
+      
+  </head>
+  <body>
+      <!--[if lt IE 10]> <style>.bonkerz {display:none;}</style> <![endif]-->
+    
+    {% include "navigation" %}
+
+    {% block content %}{% endblock %}
+
+    
+<!-- ...right before the </body> closing tag -->
+      <script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 120
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+    <script>
+        $(function() 
+        {
+            //for each .nav create a responsive version
+            $(".nav").each(function()
+            {
+                //pass the nav element and set the break point.
+                new ResponsiveNav($(this), 500);
+            });
+        });
+
+    </script>
+      <script>
+var b = document.documentElement;
+b.setAttribute('data-useragent',  navigator.userAgent);
+b.setAttribute('data-platform', navigator.platform );
+
+// IE 10 == Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)</script>
+<script type='text/javascript' src='/modal/js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='/modal/js/basic.js'></script>
+    {{ "scripts.js" | asset_url | script_tag }}
+  </body>
+</html>

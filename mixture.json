@@ -1,0 +1,55 @@
+{
+    "debug": false,
+    "lintScripts": false,
+    "preprocessorLocations": [
+        "public"
+    ],
+    "preprocessorScriptOutput": "public/scripts",
+    "preprocessorStyleOutput": "public/styles",
+    "projectName": "sum-gi3",
+    "projectDescription": "Sass, Compass, Normalize, some mixins and functions",
+    "publishedId": "16453",
+    "serverHostname": null,
+    "serverPort": null,
+    "templateDirectory": "templates",
+    "templateDefaultLayout": "layout",
+    "templateDefaultPage": "index",
+    "type": "mixture",
+    "useCompass": true,
+    "simpleModePartnerServer": null,
+    "simpleModeFileTypes": null,
+    "modelSource": null,
+    "domain": "summervillegi.com",
+    "convertHtml": {
+        "path": null,
+        "extension": ".html",
+        "ignoreUrls": null,
+        "relativePaths": true,
+        "default": null
+    },
+    "followLeader": true,
+    "routes": null,
+    "customRuby": false,
+    "customRubyPath": null,
+    "remoteDebugPort": 0,
+    "optimiseImages": true,
+    "password": null,
+    "ignoreDir": [
+        "ignore"
+    ],
+    "customTodos": null,
+    "autoPrefixer": null,
+    "sass": {
+        "outputStyle": "nested",
+        "sourceMap": true,
+        "cache": false,
+        "lineNumbers": false,
+        "globbing": false,
+        "useLibSass": false,
+        "debugInfo": false
+    },
+    "sitemap": false,
+    "less": null,
+    "optimiseSVG": true,
+    "reload": 0
+}
